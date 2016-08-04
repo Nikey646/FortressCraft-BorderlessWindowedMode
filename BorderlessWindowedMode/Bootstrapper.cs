@@ -11,7 +11,7 @@ namespace BorderlessWindowedMode
 	public class Bootstrap : FortressCraftMod
 	{
 		private Ini _settings;
-		private UInt64 _counter;
+		private UInt64 _counter = 300;
 
 		private void Start()
 		{
@@ -24,7 +24,7 @@ namespace BorderlessWindowedMode
 				return;
 			}
 
-			var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "CreativeSurvivalEvolved.ini");
+			var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "settings.ini");
 			if (!File.Exists(location))
 			{
 				using (var fs = File.Create(location))
